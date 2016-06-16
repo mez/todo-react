@@ -1,0 +1,26 @@
+
+.add-input-wrapper {
+	padding: 0;
+	margin: 13px 0px;
+}
+
+.todo-list {
+	list-style: none;
+	padding: 0
+}
+
+.todo-list li {
+	padding: 0;
+	margin: 10 0px;
+}
+
+.mui-panel {
+	padding-left: 3px;
+	padding-right: 1px;
+	margin-bottom: 5px;
+}
+
+.todo-list li button {
+	padding: 2px;
+}
+
