@@ -4,10 +4,11 @@ import Col from 'muicss/lib/react/col';
 
 import TodoListItem from './todo_list_item';
 
-const TodoList = ({todos}) => {
+const TodoList = ({todos,handleDeleteTodo}) => {
 	const todoItems = todos.map((todo) => {
 		return (
 			<TodoListItem 
+				handleDeleteTodo={handleDeleteTodo}
 				key={todo.id}
 				todo={todo}
 			/>
