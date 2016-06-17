@@ -5,7 +5,7 @@ import Checkbox from 'muicss/lib/react/checkbox';
 import Row from 'muicss/lib/react/row';
 import Col from 'muicss/lib/react/col';
 
-const TodoListItem = ({todo, handleDeleteTodo}) => {
+const TodoListItem = ({todo, handleDeleteTodo, handleDoneTodo}) => {
 	let body = todo.body;
 	if (todo.completed) {
 		body = <strike> {todo.body} </strike>;
@@ -19,7 +19,11 @@ const TodoListItem = ({todo, handleDeleteTodo}) => {
 						{body}
 					</Col>
 					<Col md='4' xs='4'>
-						<Button size='small' variant="flat" color="primary">done</Button>
+						<Button 
+							onClick={(e) => handleDoneTodo(todo)}
+							size='small' 
+							variant="flat" 
+							color="primary">done</Button>
 						<Button 
 							onClick={(e) => handleDeleteTodo(todo)}
 							size='small' 

@@ -32,6 +32,16 @@ export default class App extends Component {
 		this.setState({todos:newTodos});
 	}
 
+	handleDoneTodo(todo) {
+		let {todos} = this.state;
+		let doneTodo = Object.assign({}, todo, {completed:true});
+		let newTodos = [
+			..._.filter(todos, (t)=> { return t.id != todo.id }),
+			doneTodo
+		];
+		this.setState({todos:newTodos});
+	}
+
 	render() {
 		return (
 			<div>
@@ -39,10 +49,11 @@ export default class App extends Component {
 	      	<div className="mui--text-title mui--text-center">TODO APP</div>
 	      </Appbar>
 	      <AddTodoForm
-	      	handleAddTodo={(todo) => this.handleAddTodo(todo)}
+	      	handleAddTodo={todo => this.handleAddTodo(todo)}
 	      />
 	      <TodoList 
-	      	handleDeleteTodo={(todo) => this.handleDeleteTodo(todo)}
+	      	handleDoneTodo={todo => this.handleDoneTodo(todo) }
+	      	handleDeleteTodo={todo => this.handleDeleteTodo(todo)}
 	      	todos={this.state.todos} />
 	    </div>
 		);
