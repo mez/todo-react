@@ -11,10 +11,10 @@ export default class AddTodoForm extends Component {
 		this.state = {body:''}
 	};
 
-  handleAddClick() {
-    this.props.handleAddTodo(this.state.body);
-    this.setState({body:''});
-  }
+	handleAddClick() {
+		this.props.handleAddTodo(this.state.body);
+		this.setState({body:''});
+	}
 
 	render() {
 		return (
@@ -22,24 +22,24 @@ export default class AddTodoForm extends Component {
 				<Row>
 					<Col md='4' xs='8' md-offset="4">
 						<div className="add-input-wrapper">
-        			<Input
-        				onChange={event => this.setState({body:event.target.value})}
-                value={this.state.body} 
-        				autoFocus={true} 
-        				label="What do you have todo?" 
-        				floatingLabel={true} />
-        		</div>
-        	</Col>
-        	<Col md='2' xs='2'>
-        		<Button 
-        			onClick={(event) => this.handleAddClick() }
-        			disabled={this.state.body.length == 0}
-        			size="large" 
-        			color='accent'>
-        				Add
-        		</Button>
-        	</Col>
-        </Row>
+							<Input
+								onChange={event => this.setState({body:event.target.value})}
+								value={this.state.body} 
+								autoFocus={true} 
+								label="What do you have todo?" 
+								floatingLabel={true} />
+						</div>
+					</Col>
+					<Col md='2' xs='2'>
+						<Button 
+							onClick={(event) => this.handleAddClick() }
+							disabled={this.state.body.length == 0}
+							size="large" 
+							color='accent'>
+								Add
+						</Button>
+					</Col>
+				</Row>
 			</div>
 		);
 	};

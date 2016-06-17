@@ -20,10 +20,10 @@ const TodoList = ({todos,handleDeleteTodo,handleDoneTodo}) => {
 		<Row>
 			<Col md='4' md-offset="4">
 				<ul className="todo-list">
-    			{todoItems}
-    		</ul>
-    	</Col>
-    </Row>
+					{todoItems}
+				</ul>
+			</Col>
+		</Row>
 	);
 };
 

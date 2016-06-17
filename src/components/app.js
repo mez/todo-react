@@ -45,17 +45,17 @@ export default class App extends Component {
 	render() {
 		return (
 			<div>
-	      <Appbar>
-	      	<div className="mui--text-title mui--text-center">TODO APP</div>
-	      </Appbar>
-	      <AddTodoForm
-	      	handleAddTodo={todo => this.handleAddTodo(todo)}
-	      />
-	      <TodoList 
-	      	handleDoneTodo={todo => this.handleDoneTodo(todo) }
-	      	handleDeleteTodo={todo => this.handleDeleteTodo(todo)}
-	      	todos={this.state.todos} />
-	    </div>
+				<Appbar>
+					<div className="mui--text-title mui--text-center">TODO APP</div>
+				</Appbar>
+				<AddTodoForm
+					handleAddTodo={todo => this.handleAddTodo(todo)}
+				/>
+				<TodoList 
+					handleDoneTodo={todo => this.handleDoneTodo(todo) }
+					handleDeleteTodo={todo => this.handleDeleteTodo(todo)}
+					todos={this.state.todos} />
+			</div>
 		);
 	};
 };
