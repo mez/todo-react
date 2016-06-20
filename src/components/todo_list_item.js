@@ -10,7 +10,6 @@ const TodoListItem = ({todo, handleDeleteTodo, handleDoneTodo}) => {
 	if (todo.completed) {
 		body = <strike> {todo.body} </strike>;
 	}
-
 	return (
 		<li className="mui--text-display1"> 
 			<Panel>

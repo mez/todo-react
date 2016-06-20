@@ -13,11 +13,23 @@ const $ = _$(window);
 
 chaiJquery(chai, chai.util, $);
 
-function renderComponent(ComponentClass, props = {}, state = {}) {
-  const componentInstance =  TestUtils.renderIntoDocument(
-    <ComponentClass {...props} />
-  );
+function renderComponent(ComponentClass, props = {}, state = {}, stateless = false) {
+	//since we have stateless components we wrap in DIV elements to get component
+	//rendered.
+  let componentInstance;
 
+  if (stateless) {
+  	componentInstance =  TestUtils.renderIntoDocument(
+	  	<div>
+	    	<ComponentClass {...props} />
+	    </div>
+	  )
+  } else {
+  	componentInstance =  TestUtils.renderIntoDocument(
+	  	<ComponentClass {...props} />
+	  );
+  }
+   
   return $(ReactDOM.findDOMNode(componentInstance));
 }
 
