@@ -15,3 +15,8 @@ Checkout this repo, install dependencies, then start:
 	> npm start
 ```
 
+To run the tests:
+
+```
+	> npm run test
+```
