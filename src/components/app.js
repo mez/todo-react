@@ -27,7 +27,7 @@ export default class App extends Component {
 
 	handleDeleteTodo(todo) {
 		let {todos} = this.state;
-		let newTodos = todos.filter((t)=> { return t.id != todo.id });
+		let newTodos = todos.filter(t => t.id != todo.id );
 		this.setState({todos:newTodos});
 	}
 
@@ -35,7 +35,7 @@ export default class App extends Component {
 		let {todos} = this.state;
 		let doneTodo = Object.assign({}, todo, {completed:true});
 		let newTodos = [
-			...todos.filter((t)=> { return t.id != todo.id }),
+			...todos.filter(t => t.id != todo.id),
 			doneTodo
 		];
 		this.setState({todos:newTodos});
