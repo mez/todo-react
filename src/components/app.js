@@ -5,7 +5,6 @@ import Container from 'muicss/lib/react/container';
 
 import AddTodoForm from './add_todo_form';
 import TodoList from './todo_list';
-import _ from 'lodash';
 
 export default class App extends Component {
 	constructor(props) {
@@ -28,7 +27,7 @@ export default class App extends Component {
 
 	handleDeleteTodo(todo) {
 		let {todos} = this.state;
-		let newTodos = _.filter(todos, (t)=> { return t.id != todo.id });
+		let newTodos = todos.filter((t)=> { return t.id != todo.id });
 		this.setState({todos:newTodos});
 	}
 
@@ -36,7 +35,7 @@ export default class App extends Component {
 		let {todos} = this.state;
 		let doneTodo = Object.assign({}, todo, {completed:true});
 		let newTodos = [
-			..._.filter(todos, (t)=> { return t.id != todo.id }),
+			...todos.filter((t)=> { return t.id != todo.id }),
 			doneTodo
 		];
 		this.setState({todos:newTodos});
